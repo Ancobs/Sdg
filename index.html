@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#123b70">
+<title>SDG Contabilidad Empresarial</title>
+<style>
+:root{--navy:#102f61;--blue:#1762ad;--pale:#eaf2fc;--bg:#f3f6fb;--ink:#1c2b40;--muted:#65758b;--line:#dce5f0;--white:#fff;--green:#18794e;--red:#b42332;--gold:#8a5b08}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 Arial,Helvetica,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{min-height:100vh}.sidebar{position:fixed;inset:0 auto 0 0;width:250px;background:var(--navy);color:#fff;padding:22px 15px;display:flex;flex-direction:column;z-index:5}.brand{font-size:19px;font-weight:800;line-height:1.25;padding:5px 10px 24px}.brand span{display:block;color:#9dcaff;font-size:11px;letter-spacing:1.3px;margin-top:5px}.nav-label{color:#9eb7d8;text-transform:uppercase;font-size:10px;letter-spacing:1.4px;padding:12px 11px 7px}.nav button{width:100%;border:0;background:transparent;color:#dce9f8;text-align:left;padding:11px 12px;border-radius:9px;margin:2px 0}.nav button:hover,.nav button.active{background:#244d80;color:#fff}.side-foot{margin-top:auto;color:#a9c0dd;font-size:11px;padding:12px}.main{margin-left:250px;min-height:100vh}.topbar{height:68px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:3}.topbar strong{color:var(--navy)}.content{padding:28px;max-width:1400px;margin:auto}.page-head{display:flex;justify-content:space-between;gap:15px;align-items:flex-start;margin-bottom:22px}.page-head h1{margin:0;color:var(--navy);font-size:28px}.sub{color:var(--muted);margin:5px 0 0}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:18px}.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:19px;box-shadow:0 4px 14px #18385c08}.metric-label{font-size:12px;color:var(--muted)}.metric{font-size:28px;font-weight:800;color:var(--navy);margin-top:7px}.metric-note{font-size:11px;color:var(--muted);margin-top:4px}.two{display:grid;grid-template-columns:1.25fr 1fr;gap:16px}.card h2{font-size:17px;color:var(--navy);margin:0 0 14px}.btn{border:0;background:var(--blue);color:white;border-radius:9px;padding:10px 14px;font-weight:700}.btn:hover{filter:brightness(.94)}.btn.light{background:var(--pale);color:var(--navy)}.btn.red{background:#fff0f1;color:var(--red)}.btn.small{padding:7px 10px;font-size:12px}.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:14px}.field{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}.field label{font-size:12px;font-weight:700;color:#45566e}.field input,.field select,.field textarea,.search{border:1px solid #cbd7e6;border-radius:8px;padding:10px 11px;background:#fff;color:var(--ink);width:100%;min-width:0}.field textarea{min-height:70px;resize:vertical}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px}.table-wrap{overflow:auto}.table{border-collapse:collapse;width:100%;min-width:580px}.table th,.table td{padding:11px 9px;border-bottom:1px solid #e9eef5;text-align:left;font-size:13px}.table th{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:#66758a;background:#f8fafd}.table td.num,.table th.num{text-align:right;font-variant-numeric:tabular-nums}.empty{padding:25px;text-align:center;color:var(--muted)}.pill{display:inline-block;border-radius:30px;padding:4px 8px;font-size:11px;font-weight:700;background:#e9f7ef;color:var(--green)}.pill.warn{background:#fff5df;color:var(--gold)}.pill.bad{background:#fff0f1;color:var(--red)}.notice{padding:12px 14px;border-radius:9px;background:#fff5df;color:#75500a;margin:12px 0;font-size:13px}.notice.good{background:#e8f7ee;color:#17633b}.notice.error{background:#fff0f1;color:var(--red)}.muted{color:var(--muted)}.right{text-align:right}.actions{display:flex;gap:6px;flex-wrap:wrap}.modal-back{position:fixed;inset:0;background:#0b1b31a8;display:none;align-items:center;justify-content:center;padding:18px;z-index:10}.modal-back.show{display:flex}.modal{background:white;border-radius:15px;padding:22px;width:min(620px,100%);max-height:90vh;overflow:auto;box-shadow:0 20px 60px #0003}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.modal-head h2{margin:0;color:var(--navy)}.x{border:0;background:#eef3f9;border-radius:8px;padding:6px 10px}.balance{font-weight:800;color:var(--navy)}.footer-note{font-size:11px;color:var(--muted);margin-top:18px}.mobile-menu{display:none}.hidden{display:none!important}.welcome{padding:20px;border-radius:13px;background:linear-gradient(120deg,#123b70,#1e65ad);color:#fff;margin-bottom:18px}.welcome h2{color:#fff;margin:0 0 5px}.welcome p{margin:0;color:#dbeaff}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.two{grid-template-columns:1fr}}
+@media(max-width:720px){.sidebar{width: min(285px,85vw);transform:translateX(-105%);transition:transform .2s}.sidebar.open{transform:translateX(0)}.main{margin-left:0}.topbar{padding:0 15px;height:60px}.mobile-menu{display:inline-block}.content{padding:19px 14px}.page-head{flex-direction:column}.page-head h1{font-size:24px}.grid{gap:10px}.card{padding:15px}.metric{font-size:23px}.form-grid{grid-template-columns:1fr}.top-actions .btn{padding:8px 10px;font-size:12px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+  <div class="brand">SDG <span>CONTABILIDAD EMPRESARIAL</span></div>
+  <nav class="nav">
+    <div class="nav-label">Principal</div>
+    <button class="active" data-page="inicio">▦ &nbsp; Panel principal</button>
+    <button data-page="empresas">▣ &nbsp; Empresas</button>
+    <div class="nav-label">Contabilidad</div>
+    <button data-page="cuentas">▤ &nbsp; Plan de cuentas</button>
+    <button data-page="asientos">⇄ &nbsp; Asientos contables</button>
+    <button data-page="diario">▥ &nbsp; Libro diario</button>
+    <button data-page="balance">▧ &nbsp; Balance de comprobación</button>
+    <div class="nav-label">Gestión</div>
+    <button data-page="movimientos">＋ &nbsp; Ingresos y egresos</button>
+    <button data-page="informes">◫ &nbsp; Informes</button>
+    <div class="nav-label">Sistema</div>
+    <button data-page="configuracion">⚙ &nbsp; Configuración y datos</button>
+  </nav>
+  <div class="side-foot">Versión demostrativa 0.1<br>Los datos se guardan en este navegador.</div>
+</aside>
+<main class="main">
+<header class="topbar">
+  <div class="row"><button class="btn light mobile-menu" onclick="toggleMenu()">☰</button><strong>SDG Contabilidad Empresarial</strong></div>
+  <div class="row top-actions"><span class="muted" id="currentCompanyLabel">Empresa: Todas</span><button class="btn light" onclick="openCompanySelector()">Cambiar empresa</button></div>
+</header>
+<div class="content" id="view"></div>
+</main>
+</div>
+<div class="modal-back" id="modalBack" onclick="if(event.target===this)closeModal()">
+ <div class="modal"><div class="modal-head"><h2 id="modalTitle">Formulario</h2><button class="x" onclick="closeModal()">✕</button></div><div id="modalBody"></div></div>
+</div>
+<script>
+const KEY='sdg_contabilidad_demo_v1';
+const defaultAccounts=[
+ {code:'1',name:'ACTIVO',type:'Activo',parent:'',level:1},
+ {code:'1.01',name:'Activo corriente',type:'Activo',parent:'1',level:2},
+ {code:'1.01.01',name:'Caja',type:'Activo',parent:'1.01',level:3},
+ {code:'1.01.02',name:'Bancos',type:'Activo',parent:'1.01',level:3},
+ {code:'1.01.03',name:'Cuentas por cobrar',type:'Activo',parent:'1.01',level:3},
+ {code:'1.01.04',name:'Inventario de mercaderías',type:'Activo',parent:'1.01',level:3},
+ {code:'1.02',name:'Activo no corriente',type:'Activo',parent:'1',level:2},
+ {code:'1.02.01',name:'Equipos de computación',type:'Activo',parent:'1.02',level:3},
+ {code:'2',name:'PASIVO',type:'Pasivo',parent:'',level:1},
+ {code:'2.01',name:'Pasivo corriente',type:'Pasivo',parent:'2',level:2},
+ {code:'2.01.01',name:'Cuentas por pagar',type:'Pasivo',parent:'2.01',level:3},
+ {code:'2.01.02',name:'IVA por pagar',type:'Pasivo',parent:'2.01',level:3},
+ {code:'3',name:'PATRIMONIO',type:'Patrimonio',parent:'',level:1},
+ {code:'3.01',name:'Capital',type:'Patrimonio',parent:'3',level:2},
+ {code:'3.02',name:'Resultados acumulados',type:'Patrimonio',parent:'3',level:2},
+ {code:'4',name:'INGRESOS',type:'Ingreso',parent:'',level:1},
+ {code:'4.01',name:'Ventas',type:'Ingreso',parent:'4',level:2},
+ {code:'4.02',name:'Otros ingresos',type:'Ingreso',parent:'4',level:2},
+ {code:'5',name:'GASTOS',type:'Gasto',parent:'',level:1},
+ {code:'5.01',name:'Gastos administrativos',type:'Gasto',parent:'5',level:2},
+ {code:'5.02',name:'Servicios básicos',type:'Gasto',parent:'5',level:2},
+ {code:'5.03',name:'Costo de ventas',type:'Gasto',parent:'5',level:2}
+];
+function initial(){return {companies:[{id:'c1',name:'Mi primera empresa',ruc:'',currency:'USD'}],activeCompany:'c1',accounts:defaultAccounts,entries:[],cashflows:[]}}
+let db;
+try{db=JSON.parse(localStorage.getItem(KEY))||initial()}catch(e){db=initial()}
+function save(){localStorage.setItem(KEY,JSON.stringify(db));}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function money(n){return new Intl.NumberFormat('es-EC',{style:'currency',currency:'USD'}).format(Number(n)||0)}
+function dateToday(){return new Date().toISOString().slice(0,10)}
+function company(){return db.companies.find(c=>c.id===db.activeCompany)}
+function entries(){return db.entries.filter(e=>!db.activeCompany||e.companyId===db.activeCompany)}
+function lines(){return entries().flatMap(e=>e.lines.map(l=>({...l,date:e.date,number:e.number,description:e.description})));}
+function sum(arr,key){return arr.reduce((a,x)=>a+Number(x[key]||0),0)}
+function showPage(page){
+ document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));
+ document.getElementById('sidebar').classList.remove('open');
+ const pages={inicio:renderHome,empresas:renderCompanies,cuentas:renderAccounts,asientos:renderEntries,diario:renderJournal,balance:renderBalance,movimientos:renderCashflows,informes:renderReports,configuracion:renderSettings};
+ (pages[page]||renderHome)();
+}
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+function toggleMenu(){document.getElementById('sidebar').classList.toggle('open')}
+function setHead(label){document.getElementById('currentCompanyLabel').textContent='Empresa: '+(label||company()?.name||'Todas')}
+function pageHead(title,desc,actions=''){return `<div class="page-head"><div><h1>${title}</h1><p class="sub">${desc}</p></div><div class="actions">${actions}</div></div>`}
+function renderHome(){
+ setHead();let ls=lines(),debit=sum(ls,'debit'),credit=sum(ls,'credit'),cash=db.cashflows.filter(x=>x.companyId===db.activeCompany),income=sum(cash.filter(x=>x.kind==='Ingreso'),'amount'),expense=sum(cash.filter(x=>x.kind==='Egreso'),'amount');
+ document.getElementById('view').innerHTML=`
+ ${pageHead('Panel principal','Resumen general de la actividad contable.')}
+ <div class="welcome"><h2>Bienvenido a SDG Contabilidad Empresarial</h2><p>Organiza tus empresas y registra movimientos contables con partida doble.</p></div>
+ <div class="grid">
+ <div class="card"><div class="metric-label">Empresas registradas</div><div class="metric">${db.companies.length}</div><div class="metric-note">En este navegador</div></div>
+ <div class="card"><div class="metric-label">Asientos registrados</div><div class="metric">${entries().length}</div><div class="metric-note">Empresa seleccionada</div></div>
+ <div class="card"><div class="metric-label">Total Debe</div><div class="metric">${money(debit)}</div><div class="metric-note">Movimientos contabilizados</div></div>
+ <div class="card"><div class="metric-label">Total Haber</div><div class="metric">${money(credit)}</div><div class="metric-note">Movimientos contabilizados</div></div>
+ </div>
+ <div class="two"><div class="card"><h2>Actividad reciente</h2>${entries().length?`<div class="table-wrap"><table class="table"><thead><tr><th>Fecha</th><th>Asiento</th><th>Descripción</th><th class="num">Total</th></tr></thead><tbody>${entries().slice(-5).reverse().map(e=>`<tr><td>${e.date}</td><td>${esc(e.number)}</td><td>${esc(e.description)}</td><td class="num">${money(sum(e.lines,'debit'))}</td></tr>`).join('')}</tbody></table></div>`:'<div class="empty">Todavía no hay asientos contables.</div>'}</div>
+ <div class="card"><h2>Resumen de movimientos</h2><p class="muted">Ingresos registrados: <strong>${money(income)}</strong></p><p class="muted">Egresos registrados: <strong>${money(expense)}</strong></p><p class="muted">Diferencia Debe/Haber: <strong>${money(debit-credit)}</strong></p><span class="pill ${Math.abs(debit-credit)<.005?'':'bad'}">${Math.abs(debit-credit)<.005?'Cuadrado':'Revisar balance'}</span></div></div>
+ <p class="footer-note">Prototipo local. La información no se comparte entre dispositivos ni usuarios.</p>`;
+}
+function renderCompanies(){
+ setHead('Administración');
+ document.getElementById('view').innerHTML=pageHead('Empresas','Registra las empresas que administras.','<button class="btn" onclick="companyForm()">＋ Nueva empresa</button>')+
+ `<div class="card"><div class="table-wrap"><table class="table"><thead><tr><th>Razón social</th><th>RUC</th><th>Moneda</th><th>Acciones</th></tr></thead><tbody>${db.companies.map(c=>`<tr><td><strong>${esc(c.name)}</strong></td><td>${esc(c.ruc||'—')}</td><td>${esc(c.currency)}</td><td><div class="actions"><button class="btn small light" onclick="activateCompany('${c.id}')">Seleccionar</button><button class="btn small red" onclick="deleteCompany('${c.id}')">Eliminar</button></div></td></tr>`).join('')}</tbody></table></div></div>`;
+}
+function companyForm(){modal('Nueva empresa',`<form onsubmit="saveCompany(event)"><div class="field"><label>Razón social o nombre comercial</label><input name="name" required minlength="2"></div><div class="field"><label>RUC (opcional en esta demostración)</label><input name="ruc" maxlength="13"></div><div class="field"><label>Moneda</label><select name="currency"><option>USD</option></select></div><button class="btn">Guardar empresa</button></form>`)}
+function saveCompany(e){e.preventDefault();let f=new FormData(e.target),c={id:'c'+Date.now(),name:f.get('name').trim(),ruc:f.get('ruc').trim(),currency:'USD'};db.companies.push(c);db.activeCompany=c.id;save();closeModal();renderCompanies()}
+function activateCompany(id){db.activeCompany=id;save();setHead();showPage('inicio')}
+function deleteCompany(id){if(db.companies.length<2)return alert('Debes conservar al menos una empresa.');if(!confirm('¿Eliminar empresa y sus datos asociados?'))return;db.companies=db.companies.filter(c=>c.id!==id);db.entries=db.entries.filter(e=>e.companyId!==id);db.cashflows=db.cashflows.filter(e=>e.companyId!==id);db.activeCompany=db.companies[0].id;save();renderCompanies()}
+function renderAccounts(){
+ setHead();document.getElementById('view').innerHTML=pageHead('Plan de cuentas','Catálogo inicial de cuentas contables.','<button class="btn" onclick="accountForm()">＋ Nueva cuenta</button>')+
+ `<div class="card"><div class="toolbar"><input class="search" id="accountSearch" placeholder="Buscar por código o nombre..." oninput="filterAccounts()" style="max-width:350px"></div><div class="table-wrap"><table class="table" id="accountTable"><thead><tr><th>Código</th><th>Nombre</th><th>Tipo</th><th>Nivel</th></tr></thead><tbody>${db.accounts.slice().sort((a,b)=>a.code.localeCompare(b.code,undefined,{numeric:true})).map(a=>`<tr><td>${esc(a.code)}</td><td style="padding-left:${(a.level-1)*16+9}px">${a.level>1?'↳ ':''}${esc(a.name)}</td><td>${esc(a.type)}</td><td>${a.level}</td></tr>`).join('')}</tbody></table></div></div><p class="footer-note">Puedes adaptar este catálogo a las necesidades de cada empresa y a su marco contable aplicable.</p>`;
+}
+function filterAccounts(){let q=document.getElementById('accountSearch').value.toLowerCase();document.querySelectorAll('#accountTable tbody tr').forEach(r=>r.style.display=r.textContent.toLowerCase().includes(q)?'':'none')}
+function accountForm(){modal('Agregar cuenta',`<form onsubmit="saveAccount(event)"><div class="form-grid"><div class="field"><label>Código</label><input name="code" required></div><div class="field"><label>Tipo</label><select name="type"><option>Activo</option><option>Pasivo</option><option>Patrimonio</option><option>Ingreso</option><option>Gasto</option></select></div></div><div class="field"><label>Nombre de la cuenta</label><input name="name" required></div><button class="btn">Guardar cuenta</button></form>`)}
+function saveAccount(e){e.preventDefault();let f=new FormData(e.target),code=f.get('code').trim();if(db.accounts.some(a=>a.code===code))return alert('Ya existe ese código.');db.accounts.push({code,name:f.get('name').trim(),type:f.get('type'),level:code.split('.').length});save();closeModal();renderAccounts()}
+function accountOptions(){return db.accounts.filter(a=>a.level>1).map(a=>`<option value="${esc(a.code)}">${esc(a.code)} — ${esc(a.name)}</option>`).join('')}
+function renderEntries(){
+ setHead();document.getElementById('view').innerHTML=pageHead('Asientos contables','Registra operaciones con dos o más líneas y verifica Debe = Haber.','<button class="btn" onclick="entryForm()">＋ Nuevo asiento</button>')+
+ `<div class="card"><div class="table-wrap"><table class="table"><thead><tr><th>Fecha</th><th>Número</th><th>Descripción</th><th class="num">Debe</th><th class="num">Haber</th><th>Estado</th></tr></thead><tbody>${entries().length?entries().slice().reverse().map(e=>`<tr><td>${e.date}</td><td>${esc(e.number)}</td><td>${esc(e.description)}</td><td class="num">${money(sum(e.lines,'debit'))}</td><td class="num">${money(sum(e.lines,'credit'))}</td><td><span class="pill">Registrado</span></td></tr>`).join(''):'<tr><td colspan="6" class="empty">No hay asientos registrados.</td></tr>'}</tbody></table></div></div><p class="footer-note">En este prototipo, los asientos se pueden registrar localmente. Para uso contable real se necesitarán períodos, aprobaciones, reversos, auditoría inalterable y validación del servidor.</p>`;
+}
+function entryForm(){modal('Nuevo asiento contable',`<form id="entryForm" onsubmit="saveEntry(event)"><div class="form-grid"><div class="field"><label>Fecha</label><input name="date" type="date" value="${dateToday()}" required></div><div class="field"><label>Número de asiento</label><input name="number" value="ASI-${String(db.entries.length+1).padStart(4,'0')}" required></div></div><div class="field"><label>Descripción</label><input name="description" required placeholder="Ej. Aporte inicial de capital"></div><div id="entryLines">${entryLine(0)}${entryLine(1)}</div><div class="toolbar"><button type="button" class="btn light small" onclick="addEntryLine()">＋ Añadir línea</button></div><div class="notice" id="entryTotals">Debe: $0,00 | Haber: $0,00</div><button class="btn" type="submit">Guardar asiento</button></form>`);updateEntryTotals()}
+function entryLine(i){return `<div class="card" style="padding:12px;margin:9px 0"><div class="form-grid"><div class="field"><label>Cuenta</label><select name="account" required>${accountOptions()}</select></div><div class="field"><label>Detalle (opcional)</label><input name="detail" placeholder="Detalle de la línea"></div><div class="field"><label>Debe ($)</label><input name="debit" type="number" min="0" step="0.01" value="0" oninput="updateEntryTotals()"></div><div class="field"><label>Haber ($)</label><input name="credit" type="number" min="0" step="0.01" value="0" oninput="updateEntryTotals()"></div></div></div>`}
+function addEntryLine(){document.getElementById('entryLines').insertAdjacentHTML('beforeend',entryLine(Date.now()));}
+function updateEntryTotals(){let form=document.getElementById('entryForm');if(!form)return;let d=[...form.querySelectorAll('[name=debit]')].reduce((s,x)=>s+Number(x.value||0),0),h=[...form.querySelectorAll('[name=credit]')].reduce((s,x)=>s+Number(x.value||0),0),el=document.getElementById('entryTotals');el.textContent=`Debe: ${money(d)} | Haber: ${money(h)} | Diferencia: ${money(d-h)}`;el.className='notice '+(Math.abs(d-h)<.005&&d>0?'good':'')}
+function saveEntry(e){e.preventDefault();let f=e.target,acc=[...f.querySelectorAll('[name=account]')],debs=[...f.querySelectorAll('[name=debit]')],creds=[...f.querySelectorAll('[name=credit]')],details=[...f.querySelectorAll('[name=detail]')];let ls=acc.map((x,i)=>({accountCode:x.value,detail:details[i].value,debit:Number(debs[i].value||0),credit:Number(creds[i].value||0)}));let d=sum(ls,'debit'),h=sum(ls,'credit');if(ls.length<2||ls.some(l=>(l.debit>0&&l.credit>0)||(l.debit===0&&l.credit===0)))return alert('Cada línea debe tener un importe en Debe o Haber, no en ambos.');if(d<=0||Math.abs(d-h)>.004)return alert('El asiento no está cuadrado. Debe ser igual al Haber.');if(db.entries.some(x=>x.companyId===db.activeCompany&&x.number===f.number.value.trim()))return alert('Ese número de asiento ya existe en esta empresa.');db.entries.push({id:'e'+Date.now(),companyId:db.activeCompany,date:f.date.value,number:f.number.value.trim(),description:f.description.value.trim(),lines:ls});save();closeModal();renderEntries()}
+function renderJournal(){setHead();let all=entries().flatMap(e=>e.lines.map(l=>({date:e.date,number:e.number,description:e.description,account:l.accountCode,detail:l.detail,debit:l.debit,credit:l.credit}))).sort((a,b)=>a.date.localeCompare(b.date));document.getElementById('view').innerHTML=pageHead('Libro diario','Detalle cronológico de los asientos registrados.')+`<div class="card"><div class="table-wrap"><table class="table"><thead><tr><th>Fecha</th><th>Asiento</th><th>Cuenta</th><th>Descripción</th><th class="num">Debe</th><th class="num">Haber</th></tr></thead><tbody>${all.length?all.map(l=>`<tr><td>${l.date}</td><td>${esc(l.number)}</td><td>${esc(l.account)}</td><td>${esc(l.description)} ${l.detail?'— '+esc(l.detail):''}</td><td class="num">${l.debit?money(l.debit):'—'}</td><td class="num">${l.credit?money(l.credit):'—'}</td></tr>`).join(''):'<tr><td colspan="6" class="empty">No hay movimientos en el diario.</td></tr>'}</tbody></table></div></div>`}
+function renderBalance(){setHead();let m={};lines().forEach(l=>{m[l.accountCode]??={debit:0,credit:0};m[l.accountCode].debit+=l.debit;m[l.accountCode].credit+=l.credit});let rows=Object.entries(m).map(([code,v])=>({a:db.accounts.find(a=>a.code===code),...v})).filter(x=>x.a).sort((a,b)=>a.a.code.localeCompare(b.a.code,undefined,{numeric:true}));let d=sum(rows,'debit'),h=sum(rows,'credit');document.getElementById('view').innerHTML=pageHead('Balance de comprobación','Saldos acumulados por cuenta.')+`<div class="card"><div class="table-wrap"><table class="table"><thead><tr><th>Código</th><th>Cuenta</th><th class="num">Debe</th><th class="num">Haber</th></tr></thead><tbody>${rows.length?rows.map(r=>`<tr><td>${r.a.code}</td><td>${esc(r.a.name)}</td><td class="num">${money(r.debit)}</td><td class="num">${money(r.credit)}</td></tr>`).join(''):'<tr><td colspan="4" class="empty">Registra asientos para generar el balance.</td></tr>'}<tr><th colspan="2">TOTALES</th><th class="num">${money(d)}</th><th class="num">${money(h)}</th></tr></tbody></table></div><p><span class="pill ${Math.abs(d-h)<.005?'':'bad'}">${Math.abs(d-h)<.005?'Debe y Haber cuadran':'Existe una diferencia'}</span></p></div>`}
+function renderCashflows(){setHead();document.getElementById('view').innerHTML=pageHead('Ingresos y egresos','Registro auxiliar sencillo de movimientos de caja.','<button class="btn" onclick="cashflowForm()">＋ Nuevo movimiento</button>')+`<div class="card"><div class="table-wrap"><table class="table"><thead><tr><th>Fecha</th><th>Tipo</th><th>Concepto</th><th class="num">Importe</th></tr></thead><tbody>${db.cashflows.filter(x=>x.companyId===db.activeCompany).length?db.cashflows.filter(x=>x.companyId===db.activeCompany).slice().reverse().map(x=>`<tr><td>${x.date}</td><td><span class="pill ${x.kind==='Egreso'?'warn':''}">${x.kind}</span></td><td>${esc(x.description)}</td><td class="num">${money(x.amount)}</td></tr>`).join(''):'<tr><td colspan="4" class="empty">No hay movimientos registrados.</td></tr>'}</tbody></table></div></div><p class="footer-note">Estos movimientos auxiliares no generan automáticamente asientos contables en esta versión.</p>`}
+function cashflowForm(){modal('Nuevo ingreso o egreso',`<form onsubmit="saveCashflow(event)"><div class="form-grid"><div class="field"><label>Fecha</label><input name="date" type="date" value="${dateToday()}" required></div><div class="field"><label>Tipo</label><select name="kind"><option>Ingreso</option><option>Egreso</option></select></div></div><div class="field"><label>Concepto</label><input name="description" required></div><div class="field"><label>Importe ($)</label><input name="amount" type="number" min=".01" step=".01" required></div><button class="btn">Guardar movimiento</button></form>`)}
+function saveCashflow(e){e.preventDefault();let f=new FormData(e.target);db.cashflows.push({id:'m'+Date.now(),companyId:db.activeCompany,date:f.get('date'),kind:f.get('kind'),description:f.get('description').trim(),amount:Number(f.get('amount'))});save();closeModal();renderCashflows()}
+function renderReports(){setHead();let ls=lines(),d=sum(ls,'debit'),h=sum(ls,'credit');document.getElementById('view').innerHTML=pageHead('Informes','Resumen de información registrada en la empresa.')+`<div class="grid"><div class="card"><div class="metric-label">Asientos</div><div class="metric">${entries().length}</div></div><div class="card"><div class="metric-label">Líneas contables</div><div class="metric">${ls.length}</div></div><div class="card"><div class="metric-label">Debe</div><div class="metric">${money(d)}</div></div><div class="card"><div class="metric-label">Haber</div><div class="metric">${money(h)}</div></div></div><div class="card"><h2>Exportar información</h2><p class="muted">Descarga los datos de esta demostración en formato JSON para conservar una copia.</p><button class="btn" onclick="exportData()">Descargar copia JSON</button></div>`}
+function renderSettings(){setHead();document.getElementById('view').innerHTML=pageHead('Configuración y datos','Administra una copia de seguridad local y restablece los datos de prueba.')+`<div class="two"><div class="card"><h2>Respaldo</h2><p class="muted">Exporta todas las empresas, cuentas, asientos y movimientos almacenados en este navegador.</p><button class="btn" onclick="exportData()">Exportar respaldo</button><div class="field" style="margin-top:18px"><label>Restaurar respaldo JSON</label><input type="file" id="importFile" accept="application/json"></div><button class="btn light" onclick="importData()">Importar respaldo</button></div><div class="card"><h2>Restablecer demostración</h2><p class="muted">Esta acción elimina los datos locales y vuelve a cargar los datos iniciales.</p><button class="btn red" onclick="resetData()">Restablecer datos</button></div></div><div class="notice" style="margin-top:18px">Aviso: la información se almacena únicamente en el navegador y dispositivo donde se registra. Borrar los datos del navegador puede eliminarla. No almacenes datos personales o financieros reales en esta demostración.</div>`}
+function exportData(){let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='sdg-respaldo-'+dateToday()+'.json';a.click();URL.revokeObjectURL(a.href)}
+function importData(){let f=document.getElementById('importFile').files[0];if(!f)return alert('Selecciona primero un archivo JSON.');let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);if(!Array.isArray(x.companies)||!Array.isArray(x.accounts)||!Array.isArray(x.entries))throw Error();db=x;save();alert('Respaldo importado.');showPage('inicio')}catch(e){alert('El archivo no parece ser un respaldo SDG válido.')}};r.readAsText(f)}
+function resetData(){if(!confirm('¿Seguro? Se eliminarán todos los datos locales de esta demostración.'))return;db=initial();save();showPage('inicio')}
+function modal(title,body){document.getElementById('modalTitle').textContent=title;document.getElementById('modalBody').innerHTML=body;document.getElementById('modalBack').classList.add('show')}
+function closeModal(){document.getElementById('modalBack').classList.remove('show')}
+function openCompanySelector(){modal('Seleccionar empresa',`<div class="field"><label>Empresa activa</label><select id="companySelect">${db.companies.map(c=>`<option value="${c.id}" ${c.id===db.activeCompany?'selected':''}>${esc(c.name)}</option>`).join('')}</select></div><button class="btn" onclick="activateCompany(document.getElementById('companySelect').value);closeModal()">Usar esta empresa</button>`)}
+setHead();showPage('inicio');
+</script>
+</body>
+</html>
